@@ -646,6 +646,31 @@ html{scroll-padding-top:92px}
 .header-quick-option{display:block;padding:12px 14px;border-radius:10px;color:var(--ink);text-decoration:none;font-family:'Heebo';font-weight:600;line-height:1.35;border:1px solid transparent;transition:background .15s,border-color .15s}
 .header-quick-option:hover,.header-quick-option:focus-visible{background:#EDF6F7;border-color:#A9D0D5;outline:none}
 @media(max-width:600px){.header-quick-menu{inset-inline-end:auto;inset-inline-start:0}}
+
+/* Resource links: compact, clear and responsive button cards */
+.resource-links{margin:1.7rem 0 1.4rem;padding:clamp(1rem,2vw,1.4rem);background:#f7f8f3;border:1px solid #dce5dc;border-radius:18px;box-shadow:none}
+.resource-head{margin:0 0 .9rem}
+.resource-eyebrow{font-size:.76rem;margin-bottom:.2rem;color:#b6534e}
+.resource-head h3{font-size:clamp(1.12rem,1.7vw,1.35rem);line-height:1.35}
+.resource-head p{font-size:.88rem;line-height:1.5;margin:.25rem 0 0;max-width:62ch}
+.resource-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem}
+.resource-card,.resource-featured{min-width:0;min-height:68px;display:grid;grid-template-columns:30px minmax(0,1fr) auto;grid-template-rows:auto;align-items:center;gap:.65rem;padding:.72rem .8rem;background:#fff;border:1px solid #d9e3dc;border-radius:12px;color:var(--ink,#174f50);text-decoration:none;box-shadow:0 1px 3px rgba(23,79,80,.035);transition:border-color .16s ease,background .16s ease,box-shadow .16s ease}
+.resource-card:hover,.resource-card:focus-visible{transform:none;background:#fbfdf9;border-color:#9fbe68;box-shadow:0 3px 10px rgba(23,79,80,.08);outline:2px solid rgba(159,190,104,.22);outline-offset:1px}
+.resource-icon,.resource-featured .resource-icon{grid-column:1;grid-row:1;width:30px;height:30px;display:grid;place-items:center;border-radius:9px;background:#edf3e7;color:#54752f}
+.resource-icon svg{width:16px;height:16px;display:block}
+.resource-copy,.resource-featured .resource-copy{grid-column:2;grid-row:1;display:flex;flex-direction:column;gap:.12rem;min-width:0}
+.resource-copy strong,.resource-featured .resource-copy strong{font-size:.91rem;line-height:1.3;font-weight:700;color:var(--ink,#174f50)}
+.resource-copy small,.resource-featured .resource-copy small{font-size:.76rem;line-height:1.35;color:var(--ink-soft,#607673);font-weight:400}
+.resource-kicker{font-size:.68rem;line-height:1.2;font-weight:700;color:#b6534e}
+.resource-action,.resource-featured .resource-action{grid-column:3;grid-row:1;display:inline-flex;align-items:center;justify-content:center;gap:.25rem;align-self:center;white-space:nowrap;padding:.38rem .52rem;border:1px solid #dce6d8;border-radius:8px;background:#f7faf3;color:#45652d;font-size:.74rem;font-weight:700}
+.resource-action b{font-size:.9rem;transition:transform .16s}
+.resource-card:hover .resource-action b{transform:translateX(-2px)}
+.resource-featured{grid-column:auto;background:#fff;border-color:#cbd9c9;color:var(--ink,#174f50)}
+.resource-featured .resource-icon{background:#e9f0e3;color:#54752f}
+.resource-featured .resource-action{border-color:#dce6d8;background:#f7faf3;color:#45652d}
+.resource-featured:hover,.resource-featured:focus-visible{background:#fbfdf9;border-color:#9fbe68}
+@media(max-width:700px){.resource-links{margin:1.35rem 0;padding:.9rem;border-radius:15px}.resource-grid{grid-template-columns:1fr;gap:.5rem}.resource-card,.resource-featured{min-height:62px;padding:.65rem .72rem;grid-template-columns:28px minmax(0,1fr) auto;gap:.55rem}.resource-icon,.resource-featured .resource-icon{width:28px;height:28px}.resource-icon svg{width:15px;height:15px}.resource-copy strong,.resource-featured .resource-copy strong{font-size:.88rem}.resource-copy small,.resource-featured .resource-copy small{font-size:.74rem}.resource-action,.resource-featured .resource-action{font-size:.72rem;padding:.34rem .45rem}}
+@media(max-width:380px){.resource-card,.resource-featured{grid-template-columns:26px minmax(0,1fr);grid-template-rows:auto auto;align-items:start}.resource-icon,.resource-featured .resource-icon{grid-column:1;grid-row:1 / span 2;width:26px;height:26px}.resource-copy,.resource-featured .resource-copy{grid-column:2;grid-row:1}.resource-action,.resource-featured .resource-action{grid-column:2;grid-row:2;justify-self:start;margin-top:.18rem}}
 </style>
 </head>
 <body>
@@ -1018,6 +1043,38 @@ html{scroll-padding-top:92px}
       <div class="help-card hc-sms"><a class="h-num" dir="ltr" href="sms:0502270118" aria-label="שליחת הודעת טקסט למספר 050-2270118">050-2270118</a><span class="h-label">הודעת טקסט</span><p>אם לא ניתן לדבר בבטחה.</p></div>
     </div>
 
+    <section class="resource-links" aria-labelledby="resource-links-title">
+      <div class="resource-head">
+        <div>
+          <span class="resource-eyebrow">להעמקה ולהמשך עבודה</span>
+          <h3 id="resource-links-title">חומרים וכלים מקצועיים</h3>
+          <p>ריכזנו כאן חומרים מהוובינר ומשאבים מקצועיים שאפשר לחזור אליהם לפי הצורך.</p>
+        </div>
+      </div>
+      <div class="resource-grid">
+        <a class="resource-card resource-featured" href="webinar-responses.pdf" target="_blank" rel="noopener" aria-label="פתיחת חומרי הוובינר בנושא רצף המענים לטיפול באלימות זוגית בקרב צעירים, קובץ PDF">
+          <span class="resource-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></svg></span>
+          <span class="resource-copy"><span class="resource-kicker">חומרי וובינר · PDF</span><strong>רצף המענים לטיפול באלימות זוגית בקרב צעירים</strong><small>הוובינר של יתד ופורום נראות בשיתוף ויצו</small></span>
+          <span class="resource-action">לצפייה בחומרים <b aria-hidden="true">←</b></span>
+        </a>
+        <a class="resource-card" href="https://www.redlines.org.il/" target="_blank" rel="noopener">
+          <span class="resource-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-8-4.5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6.5-8 11-8 11Z"/><path d="M8 12h8"/></svg></span>
+          <span class="resource-copy"><strong>אתר קווים אדומים</strong><small>ידע וכלים בנושא מניעת אלימות בזוגיות</small></span>
+          <span class="resource-action">לאתר <b aria-hidden="true">←</b></span>
+        </a>
+        <a class="resource-card" href="https://campus.gov.il/course/revha-alim-he/" target="_blank" rel="noopener">
+          <span class="resource-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-5 9 5-9 5-9-5Z"/><path d="M7 11v5c3 2.5 7 2.5 10 0v-5M21 9v6"/></svg></span>
+          <span class="resource-copy"><strong>קורס בקמפוס IL</strong><small>למידה והרחבת ידע בנושא אלימות במשפחה</small></span>
+          <span class="resource-action">לקורס <b aria-hidden="true">←</b></span>
+        </a>
+        <a class="resource-card" href="https://www.gov.il/he/departments/dynamiccollectors/molsa-domestic-violence-treatment-centers" target="_blank" rel="noopener">
+          <span class="resource-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6M9 9h.01M15 9h.01"/></svg></span>
+          <span class="resource-copy"><strong>מרכזי מניעת אלימות במשפחה</strong><small>איתור מרכזים ומענים ברחבי הארץ</small></span>
+          <span class="resource-action">לרשימה <b aria-hidden="true">←</b></span>
+        </a>
+      </div>
+    </section>
+
     <div class="emergency">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 21.2 12 22l9-5V7L12 2 3 7v10l5.3 2.9"/><path d="M12 22V12"/><path d="m3 7 9 5 9-5"/></svg>
       <div>
@@ -1028,7 +1085,7 @@ html{scroll-padding-top:92px}
 
     <div class="info-box">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-      <p><b>חשוב לזכור:</b> לא נשארים לבד עם חשש — מתייעצים ופועלים בהתאם לנהלי הארגון. חשוב להכיר מראש את נהלי הארגון ואת חובות הדיווח הרלוונטיות. כאשר מעורבים קטינים או אנשים במצבים המחייבים דיווח על פי דין, יש לפעול בהתאם לחוק ולהנחיות הגורמים המוסמכים.</p>
+      <p><b>חשוב לזכור:</b> חשוב להכיר מראש את נהלי הארגון ואת חובות הדיווח הרלוונטיות. כאשר מעורבים קטינים או אנשים במצבים המחייבים דיווח על פי דין, יש לפעול בהתאם לחוק ולהנחיות הגורמים המוסמכים.</p>
     </div>
   </div>
 </section>
@@ -1211,7 +1268,22 @@ html{scroll-padding-top:92px}
     var cards = CARDS.map(function(c,i){
       return '<div class="pcard"><div class="pb b'+((i%6)+1)+'"></div><p class="pn">כרטיסייה '+(i+1)+' מתוך 6</p><h2>'+c.t+'</h2><p class="px">'+c.x+'</p><p class="pq"><span>שאלה לשיחה:</span> '+c.q+'</p><p class="pcredit">זוגיות מיטיבה: כלי לפתיחת שיחה ולתגובה ראשונית · פורום נראות בשיתוף יוזמת קווים אדומים</p></div>';
     }).join('');
-    return '<!DOCTYPE html><html lang="he" dir="rtl"><head><meta charset="UTF-8"><title>כרטיסיות לשיחה — מה מתחיל זוגיות מיטיבה?</title><style>@page{size:A4;margin:0}body{font-family:Assistant,Heebo,Arial,sans-serif;margin:0;background:#FAF8F3;color:#1E3A3B}.sheet{display:grid;grid-template-columns:repeat(2,1fr);gap:8mm;padding:10mm}.pcard{width:88mm;height:128mm;border-radius:5mm;background:#fff;box-shadow:0 1px 4px rgba(22,76,77,.18);padding:10mm 9mm;page-break-inside:avoid;position:relative;overflow:hidden;box-sizing:border-box}.pb{position:absolute;top:0;right:0;left:0;height:5mm}.b1{background:#F28F83}.b2{background:#EAA24B}.b3{background:#A3C366}.b4{background:#A9D0D5}.b5{background:#164C4D}.b6{background:#C65F53}.pn{font-size:8pt;color:#43605F;margin:2mm 0 3mm}.pcard h2{font-size:15pt;color:#164C4D;margin:0 0 4mm}.px{font-size:10.5pt;line-height:1.6;color:#43605F;margin:0 0 5mm}.pq{font-size:11.5pt;font-weight:bold;color:#164C4D;background:#EDF6F7;border-right:1.5mm solid #164C4D;border-radius:3mm;padding:4mm;margin:0;line-height:1.55}.pq span{color:#C65F53}.pcredit{position:absolute;bottom:5mm;right:9mm;left:9mm;font-size:6.5pt;color:#8AA0A0;border-top:1px solid #DCE4DE;padding-top:2mm}.hint{padding:6mm 10mm;font-size:8.5pt;color:#43605F}@media print{.hint{display:none}}</style></head><body><p class="hint">קווי החיתוך: כל כרטיסייה היא 88×128 מ"מ, 4 כרטיסיות בעמוד A4. הדפיסו דו-צדדית וגזרו לאורך הקווים.</p><div class="sheet">'+cards+'</div></body></html>';
+    return `<!DOCTYPE html>
+<html lang="he" dir="rtl"><head><meta charset="UTF-8"><title>כרטיסיות לשיחה — מה מתחיל זוגיות מיטיבה?</title>
+<style>
+@page{size:A4;margin:0}
+*{box-sizing:border-box}
+body{font-family:Assistant,Heebo,Arial,sans-serif;margin:0;background:#FAF8F3;color:#1E3A3B}
+.sheet{display:grid;grid-template-columns:repeat(2,88mm);justify-content:center;gap:8mm;padding:10mm}
+.pcard{width:88mm;height:128mm;border-radius:5mm;background:#fff;box-shadow:0 1px 4px rgba(22,76,77,.18);padding:10mm 9mm;page-break-inside:avoid;position:relative;overflow:hidden}
+.pb{position:absolute;top:0;right:0;left:0;height:5mm}
+.b1{background:#F28F83}.b2{background:#EAA24B}.b3{background:#A3C366}.b4{background:#A9D0D5}.b5{background:#164C4D}.b6{background:#C65F53}
+.pn{font-size:8pt;color:#43605F;margin:2mm 0 3mm}.pcard h2{font-size:15pt;color:#164C4D;margin:0 0 4mm}.px{font-size:10.5pt;line-height:1.6;color:#43605F;margin:0 0 5mm}
+.pq{font-size:11.5pt;font-weight:bold;color:#164C4D;background:#EDF6F7;border-right:1.5mm solid #164C4D;border-radius:3mm;padding:4mm;margin:0;line-height:1.55}.pq span{color:#C65F53}
+.pcredit{position:absolute;bottom:5mm;right:9mm;left:9mm;font-size:6.5pt;color:#8AA0A0;border-top:1px solid #DCE4DE;padding-top:2mm}
+.hint{padding:6mm 10mm;font-size:8.5pt;color:#43605F}
+@media print{.hint{display:none}}
+</style></head><body><p class="hint">קווי החיתוך: כל כרטיסייה היא 88×128 מ"מ, 4 כרטיסיות בעמוד A4. הדפיסו דו-צדדית וגזרו לאורך הקווים.</p><div class="sheet">${cards}</div></body></html>`;
   }
   function openPrint(){
     /* פתיחת החלון מתבצעת ישירות מתוך לחיצת המשתמש כדי לא להיחסם כ-popup. */
